@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>İletişim | MS Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 2.8rem;
+      color: white;
+      text-shadow: 0 0 15px rgba(0,0,0,0.8);
+      display: flex;
+      gap: 0.4rem;
+      overflow: hidden;
+      position: relative;
+      z-index: 10;
+    }
+    .logo-text span {
+      display: inline-block;
+      opacity: 0;
+    }
+    .mina {
+      color: #fff;
+      animation: slideInFromLeft 1s forwards;
+    }
+    .simsek {
+      color: #ddd;
+      animation: slideInFromRight 1s forwards;
+      animation-delay: 0.5s;
+    }
+    @keyframes slideInFromLeft {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    @keyframes slideInFromRight {
+      0% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="img/logo.png" alt="Logo" class="logo-img" />
+      <div class="logo-text">
+        <span class="mina">MİNA</span>
+        <span class="simsek">ŞİMŞEK</span>
+      </div>
+    </div>
+    <nav>
+      <ul class="navbar">
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="projeler.html">Projeler</a></li>
+        <li><a href="tasarimlar.html">Tasarım</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+      </ul>
+      <div id="dark-mode-toggle" title="Gece Modu Aç/Kapa">🌙</div>
+    </nav>
+  </header>
+
+  <main class="section">
+    <h2 data-aos="fade-up" data-aos-duration="800">İletişim</h2>
+
+    <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+      Instagram:
+      <a href="https://instagram.com/minasimsek_" target="_blank" rel="noopener noreferrer">@minasimsek_</a>
+    </p>
+
+    <h3 data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">Konum</h3>
+
+    <div class="map-container" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1507.7691778708294!2d28.97737551027929!3d41.02835299643613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab77855d98791%3A0x6d1aa9bfeff49a92!2sMimar%20Sinan%20G%C3%BCzel%20Sanatlar%20%C3%9Cniversitesi!5e0!3m2!1str!2str!4v1713021550001"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        style="border:0; width:100%; height:350px;"
+      ></iframe>
+    </div>
+  </main>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+    });
+
+    const toggle = document.getElementById('dark-mode-toggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+</body>
+</html>

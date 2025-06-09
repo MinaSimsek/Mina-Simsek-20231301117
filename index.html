@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mina Şimşek | Portfolyo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="img/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    .hero-intro {
+      position: relative;
+      background: url('img/surdurulebilirtasarim.jpg') no-repeat center center/cover;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      font-family: 'Playfair Display', serif;
+      padding: 0 2rem;
+      margin-bottom: 2rem;
+    }
+    .hero-intro::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 0;
+    }
+    .hero-intro p {
+      position: relative;
+      font-size: 2.8rem;
+      max-width: 700px;
+      z-index: 1;
+      line-height: 1.3;
+      font-weight: 600;
+      text-shadow: 0 0 15px rgba(0,0,0,0.8);
+    }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 2.8rem;
+      color: white;
+      text-shadow: 0 0 15px rgba(0,0,0,0.8);
+      display: flex;
+      gap: 0.4rem;
+      overflow: hidden;
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo-text span {
+      display: inline-block;
+    }
+
+    .mina {
+      color: #fff;
+      animation: slideInFromLeft 1s forwards;
+      opacity: 0;
+    }
+
+    .simsek {
+      color: #ddd;
+      animation: slideInFromRight 1s forwards;
+      animation-delay: 0.5s;
+      opacity: 0;
+    }
+
+    @keyframes slideInFromLeft {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInFromRight {
+      0% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="img/logo.png" alt="Logo" class="logo-img" />
+      <div class="logo-text">
+        <span class="mina">MİNA</span>
+        <span class="simsek">ŞİMŞEK</span>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="projeler.html">Projeler</a></li>
+        <li><a href="tasarimlar.html">Tasarım</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+      </ul>
+    </nav>
+    <div id="dark-mode-toggle" title="Gece Modu Aç/Kapa">🌙</div>
+  </header>
+
+  <section class="hero-intro" data-aos="fade-up">
+    <p>Ben Mina Şimşek, mimariyi doğayla buluşturan tasarımlara tutkuyla bağlıyım.</p>
+  </section>
+
+  <section id="about" class="about-mini" style="padding: 2rem;" data-aos="fade-up">
+    <p>Benimle çalışmak veya projeler hakkında detaylı bilgi almak için iletişime geçebilirsiniz.</p>
+  </section>
+
+  <section class="hero">
+    <div class="keyword-box">
+      <div class="keyword" style="--img:url('img/surdurulebilirtasarim.jpg')" data-aos="fade-up">SÜRDÜRÜLEBİLİR TASARIM</div>
+      <div class="keyword" style="--img:url('img/yesilalan.png')" data-aos="fade-up" data-aos-delay="100">YEŞİL ALAN</div>
+      <div class="keyword" style="--img:url('img/modernmimari.jpg')" data-aos="fade-up" data-aos-delay="200">MODERN MİMARİ</div>
+      <div class="keyword" style="--img:url('img/yerelmalzeme.jpg')" data-aos="fade-up" data-aos-delay="300">YEREL MALZEME TASARIMI</div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+  <script>
+    const toggle = document.getElementById('dark-mode-toggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+</body>
+</html>

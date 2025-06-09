@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tasarım</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 2.8rem;
+      color: white;
+      text-shadow: 0 0 15px rgba(0,0,0,0.8);
+      display: flex;
+      gap: 0.4rem;
+      overflow: hidden;
+      position: relative;
+      z-index: 10;
+    }
+    .logo-text span {
+      display: inline-block;
+      opacity: 0;
+    }
+    .mina {
+      color: #fff;
+      animation: slideInFromLeft 1s forwards;
+    }
+    .simsek {
+      color: #ddd;
+      animation: slideInFromRight 1s forwards;
+      animation-delay: 0.5s;
+    }
+    @keyframes slideInFromLeft {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    @keyframes slideInFromRight {
+      0% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <header>
+    <div class="logo-container">
+      <img src="img/logo.png" alt="Logo" class="logo-img" />
+      <div class="logo-text">
+        <span class="mina">MİNA</span>
+        <span class="simsek">ŞİMŞEK</span>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="projeler.html">Projeler</a></li>
+        <li><a href="tasarimlar.html">Tasarım</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+      </ul>
+    </nav>
+    <div id="dark-mode-toggle" title="Gece Modu Aç/Kapa">🌙</div>
+  </header>
+
+  <section>
+    <h2 data-aos="fade-up" data-aos-duration="800">Tasarım</h2>
+    <div class="card-grid">
+      <div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+        <img src="img/tasarim1.jpeg" alt="Tasarım 1" />
+        <div class="card-content">
+          <h3>Tasarım JPEG 1</h3>
+        </div>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+        <img src="img/tasarim2.jpeg" alt="Tasarım 2" />
+        <div class="card-content">
+          <h3>Tasarım JPEG 2</h3>
+        </div>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+        <div class="card-content">
+          <h3>Tasarım PDF</h3>
+          <a href="docs/tasarim1.pdf" download>PDF'i indir</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+    });
+
+    const toggle = document.getElementById('dark-mode-toggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+</body>
+</html>
